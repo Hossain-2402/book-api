@@ -122,22 +122,6 @@ app.get('/api/products/:id',(req,res)=>{
 });
 
 
-// ---------------------------------------------------------------------------------------GET(limit)----------------------------------------------------------------------------------------
-
-app.get('/api/products',(req,res)=>{
-    const limit = parseInt(req.query.limit) || 4;
-    const skip = parseInt(req.query.skip) || 0;
-    console.log(limit, skip);
-
-    // Query the MongoDB collection (assuming a Product model exists)
-  Product.find().skip(skip).limit(limit)
-  .then(result=>{
-    res.status(200).json(result);
-  })
-  .catch(err=>{
-    res.status(404).json({message : err.message});
-  })
-});
 
 
 
