@@ -8,7 +8,9 @@ const MONGO_URI = "mongodb+srv://hossainieofficial:2qu3xhMA6ww5BLX8@cluster1.t1r
 
 export const connectDB = ()=>{
 	try{
-		const connect = mongoose.connect(MONGO_URI);
+		const connect = mongoose.connect(MONGO_URI,{
+			serverSelectionTimeoutMS: 30000
+		});
 		console.log("Mongo Database connected " );
 	}
 	catch(error){
