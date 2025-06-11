@@ -7,6 +7,8 @@ import Product from "./models/product.model.js";
 
 
 
+
+
 app.use(express.json());
 app.use(cors());
 
